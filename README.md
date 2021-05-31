@@ -1,6 +1,9 @@
 # JavaScript blog
 I have decided to develop the app where I have an opportunity to publish my posts related to js development. Techonologies, which I am using, is `Angular, TS, Webpack, NodeJS`
 
+> [!home](./screenshots/screen1.png)
+> [!posts](./screenshots/screen3.png)
+
 ## How to run the app
 * `npm install`
 *  modify the file, named `server\mysql\connection_mysql.ts`. Fill out your database connection settings
@@ -17,4 +20,3 @@ I have decided to develop the app where I have an opportunity to publish my post
 * GET /topics - the page, where user can see posts related to react and angular
 
 `!Warning. The app is under development`
-**You can visit the site, using website url `https://protected-waters-43179.herokuapp.com/`**
