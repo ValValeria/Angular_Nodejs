@@ -1,0 +1,63 @@
+@import "src/variables";
+
+.banner{
+  min-height: 100vh !important;
+}
+
+.banner__wrap{
+  margin-top:84px !important;
+}
+
+.banner *{
+  color: $light-color;
+}
+
+.banner__items{
+  align-items: flex-end !important;
+}
+
+.banner__items .banner__txt{
+  align-items: flex-end !important;
+  text-align: right;
+  width:55%;
+  position: relative;
+  z-index:1;
+  flex-direction: column;
+}
+
+.banner__img{
+  position: absolute;
+  left:0;
+  top:84px;
+  height:100%;
+  width:44%;
+  max-width:500px;
+
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+@media(max-width: $media-header - 300px){
+  .banner__img{
+    left: -19%;
+  }
+
+  .banner__items .banner__txt {
+    width: 70%;
+  }
+}
+
+@media(max-width: $start-media){
+   .banner__img{
+     display:none;
+   }
+
+  .banner__items .banner__txt {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="card shadow">
+  <div class="card__wrap w-100">
+    <div class="card__content w-100">
+      <ng-container *ngIf="!isEmpty">
+        <div class="card__img w-100 center mb" *ngIf="image">
+          <img src="{{image}}" alt="'..."/>
+        </div>
+        <h5 class="card__title text-center ">
+          {{title}}
+        </h5>
+        <div class="card__list w-100" *ngIf="list.length">
+          <mat-action-list>
+            <ng-container *ngFor="let item of list">
+              <mat-list-item (click)="navigate(item.link)">
+                <h6>
+                  {{item.txt}}
+                </h6>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </ng-container>
+          </mat-action-list>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="isEmpty">
+        <ng-content></ng-content>
+      </ng-container>
+    </div>
+  </div>
+</div>

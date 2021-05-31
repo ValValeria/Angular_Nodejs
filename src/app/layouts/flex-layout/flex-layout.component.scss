@@ -1,0 +1,18 @@
+@import 'src/base';
+
+:host, .flex-layout,
+.flex-layout__area,
+.flex-layout__wrap,
+.flex-layout__items{
+  width: 100%;
+}
+
+.flex-layout__items{
+  @extend .center;
+}
+
+@media(max-width: $start-media){
+  .flex-layout__items{
+    flex-wrap: wrap;
+  }
+}

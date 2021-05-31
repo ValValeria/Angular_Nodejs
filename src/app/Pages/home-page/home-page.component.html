@@ -1,0 +1,82 @@
+<app-banner></app-banner>
+
+<div class="w-100">
+  <app-section-layout cssClass="slider" title="JavaScript is very popular">
+    <app-flex-layout [cols]="2">
+      <div class="slider__description center flex-column align-items-start text-left">
+        <h4>
+          As for 2021, <span class="text-orange">JavaScript</span> is arguably the most language
+        </h4>
+        <p class="mb h6">
+          There are over 1.8 Billion websites in the world, and JavaScript is used on 95% of them. The popularity of JavaScript over the years.
+        </p>
+        <app-button txt="Learn more" cssClass="h6"></app-button>
+      </div>
+      <div class="slider__img w-100">
+        <div class="center w-100 justify-content-end"><img src="/assets/store.webp" alt=""></div>
+      </div>
+    </app-flex-layout>
+  </app-section-layout>
+</div>
+
+<app-section-layout cssClass="slider"  title="JavaScript technologies">
+  <app-flex-layout [cols]="3">
+    <app-card-simple
+      *ngFor="let item of languages"
+      [title]="item.title"
+      [image]="item.img"
+    ></app-card-simple>
+  </app-flex-layout>
+</app-section-layout>
+
+<div class="w-100">
+  <app-section-layout cssClass="slider"  title="Sites from scratch">
+    <app-flex-layout [cols]="2" [changeOrder]="true">
+      <div class="slider__img img-container center">
+        <img src="/assets/bookings.webp" alt="..." style="margin-top:2rem;"/>
+      </div>
+      <div class="slider__description mw-400-px text-right">
+        <h4 class="pb-1">You can create sites<span class="text-orange"> from scratch</span></h4>
+        <p class="mb h6">Using NodeJs, Angular or other framework you can develop a beautiful website</p>
+        <app-button txt="Learn more" cssClass="h6"></app-button>
+      </div>
+    </app-flex-layout>
+  </app-section-layout>
+</div>
+
+<app-section-layout cssClass="slider"  title="Versatile language">
+  <app-flex-layout [cols]="2" [changeOrder]="false">
+    <div class="slider__description center flex-column align-items-start section__description text-left ">
+      <h4 class="mb">
+        JavaScript is one <br/> of the versatile language.
+      </h4>
+      <p class="mb h6">
+       It allow us developers to build websites, servers, mobile apps, hardware and even AI.
+      </p>
+      <app-button txt="Learn more" cssClass="h6"></app-button>
+    </div>
+    <div class="slider__img section__img center">
+      <div class="img-container w-100">
+        <img src="/assets/site.webp" alt="">
+      </div>
+    </div>
+  </app-flex-layout>
+</app-section-layout>
+
+<app-section-layout cssClass="slider"  title="A new job">
+  <app-flex-layout [cols]="2">
+    <div class="slider__description center flex-column align-items-start section__description text-left ">
+      <h4 class="mb">It is easy to get a new job </h4>
+      <p class="mb h6">
+        Due to the popularity of js, it is going to be easy for you to be hired for the job related to frontend development
+      </p>
+      <app-button txt="Learn more" cssClass="h6"></app-button>
+    </div>
+    <div class="slider__chart section__img center">
+      <div class="w-100">
+        <apx-chart #app_chart></apx-chart>
+      </div>
+    </div>
+  </app-flex-layout>
+</app-section-layout>
+

@@ -1,0 +1,171 @@
+@import './variables';
+
+
+.center{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.txt-bold{
+  font-weight:500 !important;
+}
+
+.mb-half{
+  margin-bottom: $margin/2;
+}
+
+.headline-gr,
+.h1, h1 {
+  font-size: 75px !important;
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+  letter-spacing: -.005em !important;
+}
+
+.headline-md,
+.h2, h2 {
+  font-size: 56px !important;
+  line-height: 1.07143 !important;
+  letter-spacing: -.005em;
+  font-weight: 300;
+}
+
+.h3, h3{
+  font-size: 45px !important;
+  font-weight: 300 !important;
+  letter-spacing: .007em !important;
+  margin-top: 12px !important;
+  line-height: 1.3 !important;
+  padding-bottom: 1rem !important;
+}
+
+.h5, h5 {
+  letter-spacing: 0.011em !important;
+  margin-bottom: 0.2em !important;
+  font-size: 26px !important;
+  line-height: 1.381 !important;
+  font-weight: 300 !important;
+}
+
+.overflow-hidden{
+  overflow: hidden !important;
+}
+
+.h6, h6{
+  background: transparent;
+  letter-spacing: 0.011em !important;
+  margin-bottom: 0.2em !important;
+  font-size: 17.5px !important;
+  line-height: 1.381 !important;
+  font-weight: 300 !important;
+}
+
+.small-txt{
+  @extend .h6;
+  font-size: 14px;
+}
+
+.headline-sm,
+.h4, h4 {
+  font-size: 36px !important;
+  font-weight: 300;
+  letter-spacing: .007em;
+  margin-top: 12px !important;
+  line-height: 1.3;
+}
+
+%center,.center{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+%wrap{
+  width:90%;
+  margin:0 auto;
+}
+
+.wrap-md-pd{
+  @extend %wrap;
+  max-width:1000px;
+  padding: $margin*6 0;
+}
+
+.txt-dark{
+  color: $dark-color !important;
+}
+
+.section__wrap-half{
+  padding-top: $margin !important;
+  padding-bottom: $margin !important;
+}
+
+.p-all{
+  padding: $margin !important;
+}
+
+.mb{
+  margin-bottom: $margin !important;
+}
+
+.ml{
+  margin-left: $margin !important;
+}
+
+.mt{
+  margin-top: $margin !important;
+}
+
+.mr{
+  margin-right: $margin !important;
+}
+
+.ml-half{
+  margin-left: $margin/2 !important;
+}
+
+.mb-half{
+  margin-bottom: $margin/2 !important;
+}
+
+
+@media (max-width: $media-header) {
+  .h1, h1{
+    font-size: 65px !important;
+    line-height: 1.3 !important;
+  }
+
+  .h6, h6{
+    font-size: 16px !important;
+  }
+
+  .h4, h4{
+    font-size: 30px !important;
+  }
+
+  .h5, h5{
+    font-size: 22px !important;
+  }
+
+  .h2, h2{
+    font-size: 48px !important;
+  }
+
+  .h3, h3{
+    font-size: 38px !important;
+  }
+}
+
+@media(max-width: $start-media){
+  .section__wrap{
+    padding: $margin*4 0 !important;
+  }
+
+  .section__wrap-half{
+    padding-top: $margin !important;
+    padding-bottom: $margin !important;
+  }
+}
+

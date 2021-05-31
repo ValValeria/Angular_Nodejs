@@ -1,0 +1,64 @@
+
+<app-banner
+  title="Build your own website"
+  description="The Freedom to Create the Websites You Want"
+  img="/assets/articles.webp"
+></app-banner>
+
+<app-section-layout [hasTitle]="false" [noSection]="true">
+  <div class="w-100 center justify-content-start">
+    <app-breadcrumbs [urls]="urls"></app-breadcrumbs>
+  </div>
+</app-section-layout>
+
+<app-section-layout title="Our posts" cssClass="posts">
+  <div class="posts__category mb" *ngIf="isCat" hidden>
+    <app-card-simple [isEmpty]="true">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="h6">
+          <span class="txt-bold">
+            {{"Category: " | uppercase}}
+          </span>
+          <button mat-button color="accent" class="h6">{{category}}</button>
+        </div>
+        <div on-click="undo()">
+          <app-button txt="Reset the preferences" cssClass="h6"></app-button>
+        </div>
+      </div>
+    </app-card-simple>
+  </div>
+  <div class="posts__list mb w-100">
+    <div class="posts__item pb-4 w-100" *ngIf="articles.length && httpRequest">
+      <app-grid-layout [oneColumn]="true">
+        <app-post-card
+          *ngFor="let post of articles"
+          [post]="post"
+          (sortby)="sortby($event)"
+        ></app-post-card>
+      </app-grid-layout>
+    </div>
+    <div class="posts__item center text-center" *ngIf="!articles.length && httpRequest">
+      <div class=" center flex-column ">
+        <h6 class="section__error-black">There are no articles yet</h6>
+        <img src="https://preview.webpixels.io/purpose-website-ui-kit/assets/img/svg/illustrations/work-chat.svg" alt="" srcset="">
+      </div>
+    </div>
+    <div class="posts__item center text-center w-100" *ngIf="!articles.length && !httpRequest" style="min-height:60vh">
+      <div class="center flex-column w-100">
+        <mat-spinner color="accent"></mat-spinner>
+      </div>
+    </div>
+  </div>
+</app-section-layout>
+
+<section class="section light-gr mh-sm"  *ngIf="length > pageSize && articles.length"  >
+     <div class="wrap-sm-pd pb-3 center">
+        <mat-paginator [length]="length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[pageSize]"
+        (page)="pageChange($event)"
+        color="accent"
+        >
+       </mat-paginator>
+     </div>
+</section>

@@ -1,0 +1,11 @@
+@import "src/variables";
+
+.post-card{
+  padding: $margin;
+}
+
+.post-card__img img{
+  width: 100%;
+  object-fit: cover;
+  height:250px;
+}

@@ -1,0 +1,19 @@
+@import 'src/variables';
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  content: '>';
+}
+
+a{
+  color: $dark-color;
+}
+
+.breadcrumb-item:not(.active) a{
+  font-weight:400 !important;
+}
+
+.breadcrumb{
+  background-color:white;
+}

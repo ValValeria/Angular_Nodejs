@@ -1,0 +1,38 @@
+<div class="comments__area center w-100 flex-column">
+     <div class="comments__form shadow">
+        <div class="w-100">
+            <div class="w-100">
+                <div class="comments__input">
+                    <mat-form-field  class="w-100" color="accent" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input  matNativeControl #email maxlength="20" minlength="10" value="{{prevUsername}}"/>
+                    </mat-form-field>
+                </div>
+                <div class="comments__input">
+                    <mat-form-field class="w-100" color="accent" appearance="outline">
+                         <mat-label>Comment</mat-label>
+                         <textarea matNativeControl rows="4" #comment maxlength="200" minlength="10"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="comments__input" *ngIf="message">
+                    <button mat-stroked-button color="warn" class="w-100 mb-3">{{message}}</button>
+                </div>
+                <div class="w-100 center" on-click="submit(email.value,comment.value)">
+                    <app-button txt="Add a comment" cssClass="h6"></app-button>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <div class="comments__fields mt w-100 ">
+         <div class="comments__card outlined-card mb-half w-100" *ngFor="let comment of comments">
+           <h5 class="mb-half txt-bold">{{comment.username}}</h5>
+           <h6>{{comment.message}}</h6>
+           <div class="comments__img">
+             <button mat-fab color="accent">
+               <mat-icon>face</mat-icon>
+             </button>
+           </div>
+         </div>
+     </div>
+</div>

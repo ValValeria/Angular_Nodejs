@@ -1,0 +1,15 @@
+<div class="w-100 bg-dark">
+  <app-section-layout [hasTitle]="false" cssClass="banner">
+    <div class="banner__txt">
+      <h1 class="banner__title mb" style="text-transform: uppercase;">{{title}} </h1>
+      <h6 class="banner__description mb mt">
+        {{description}}
+      </h6>
+      <app-button txt="Learn more" cssClass="h6"></app-button>
+    </div>
+
+    <div class="banner__img">
+      <img alt="..." src="{{img}}"/>
+    </div>
+  </app-section-layout>
+</div>

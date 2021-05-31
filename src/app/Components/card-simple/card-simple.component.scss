@@ -1,0 +1,29 @@
+@import "src/base";
+
+.card{
+  min-width:200px;
+  padding: $margin;
+  @extend .center;
+  border: none !important;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
+
+  h6, h5{
+    color: $dark-color;
+  }
+}
+
+.card:hover{
+  transform: scale(1.05);
+}
+
+.card img{
+  height:300px;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+li{
+  list-style: none;
+}

@@ -1,0 +1,40 @@
+@import "src/variables";
+
+::ng-deep .topics-banner{
+  padding-top:40px !important;
+
+  .topics-banner__txt *{
+    color: $light-color;
+  }
+
+  .topics-banner__img img{
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+::ng-deep .topics{
+  .card{
+    width: 100%;
+    max-width: 370px;
+  }
+
+  .flex-layout__items{
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+}
+
+.border-linear{
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to bottom,#fff 15%,#4e6773 100%);
+  width:90%;
+  margin: 0 auto 1rem;
+  padding-bottom:0.25rem;
+}
+
+@media(max-width: $start-media) {
+  ::ng-deep .topics .flex-layout__items{
+    justify-content: center !important;
+  }
+}

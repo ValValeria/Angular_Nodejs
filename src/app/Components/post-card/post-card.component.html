@@ -1,0 +1,23 @@
+<div class="post-card mb">
+  <div class="post-card__wrap w-100">
+    <div class="post-card__content w-100">
+      <h4 class="card__title text-left mb">
+        {{post?.title}}
+      </h4>
+      <div class="post-card__img w-100 center mb">
+        <img src="{{post?.img}}" alt="'..."/>
+      </div>
+      <div class="categories mb">
+        <span>Topic:</span>
+        <button mat-button color="accent" style=" font-size: 17px; text-transform: uppercase;"  on-click="onSort(post.categories)">{{post.categories}}</button>
+      </div>
+      <div class="mb">
+        <h6 class="mb">{{post?.excerpt}}</h6>
+      </div>
+      <div (click)="router.navigate(['post', post.id])">
+        <app-button txt="Read more" cssClass="h6"></app-button>
+      </div>
+    </div>
+  </div>
+</div>
+

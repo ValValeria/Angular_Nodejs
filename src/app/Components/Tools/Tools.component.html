@@ -1,0 +1,106 @@
+
+<section class="tools section mh-sm" style="min-height:60vh;">
+    <div class="wrap-md-pd center flex-column">
+         <h2>Fill out your post content</h2>
+         <div class="wrap-md-pd pb-4">
+             <mat-card >
+                 <mat-card-content class="center">
+                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" (change)="changeTool($event)">
+                        <mat-button-toggle value="title">New title</mat-button-toggle>
+                        <mat-button-toggle value="new_line">New line</mat-button-toggle>
+                        <mat-button-toggle value="image">Image</mat-button-toggle>
+                        <mat-button-toggle value="code">Code</mat-button-toggle>
+                        <mat-button-toggle value="list">New list</mat-button-toggle>
+                      </mat-button-toggle-group>
+                 </mat-card-content>
+                 <mat-card-content>
+                    <div [ngSwitch]="active">
+
+                        <div *ngSwitchCase="'new_line'">
+                            <mat-form-field appearance="filled" class="w-100">
+                                <mat-label>Type a new line and press enter</mat-label>
+                                <input type="text" matInput #line (keyup.enter)="addLine(line,true)"/>
+                            </mat-form-field>
+                            <div>
+                                <button mat-stroked-button color="primary" on-click="addLine(line)">Add a line</button>
+                            </div>
+                         </div>
+
+                         <div *ngSwitchCase="'title'">
+                            <mat-form-field appearance="filled" class="w-100">
+                                <mat-label>Type a new title and press enter</mat-label>
+                                <input type="text" matInput #line (keyup.enter)="addTitle(line,true)" />
+                            </mat-form-field>
+                            <div>
+                                <button mat-stroked-button color="primary" on-click="addTitle(line)">Add a new title</button>
+                            </div>
+                         </div>
+
+                         <div *ngSwitchCase="'image'">
+                            <input type="file" hidden #file on-change="fileUpload()"/>
+                            <button mat-stroked-button color="primary" on-click="file.click()">Upload an image</button>
+                         </div>
+
+                         <div *ngSwitchCase="'code'">
+                            <textarea matInput #code class="w-100 code"></textarea>
+                            <button mat-stroked-button color="primary" on-click="addCode(code)">
+                                Add code to the area 
+                            </button>
+                         </div>
+
+                         <div *ngSwitchCase="'list'">
+                            <input type="text" matInput #list (keyup.enter)="addList(list,true)"/>
+                            <button mat-stroked-button color="primary" on-click="addList(list)">
+                                Add list
+                            </button>
+                         </div>
+
+                    </div>
+                 </mat-card-content>
+             </mat-card>
+         </div>
+
+         <div class="tools__form w-100 mb-4">
+            <div class="wrap-md">
+                <div class="card">
+                    <div class="card-body">
+                        <ng-container #container></ng-container>
+                        <ng-template #image let-url="url">
+                            <div class="tools__image pt-2">
+                                <img alt="..." data-u="{{url}}"/>
+                            </div>
+                       </ng-template>  
+
+                       <ng-template #p let-p="p">
+                           <div class="tools__image pt-2" >
+                               <p class="m-0">{{p}}</p>
+                           </div>
+                        </ng-template> 
+
+                        <ng-template #code let-items="code">       
+                            <ul class="code">
+                               <p  *ngFor="let line of items">{{line}}</p>
+                            </ul>
+                        </ng-template> 
+                        
+                        <ng-template #h1 let-h1="h1">
+                            <div class="tools__image pt-2">
+                                <h2 class="m-1">{{h1}}</h2>
+                            </div>
+                         </ng-template> 
+                         <ng-template #list let-li="li">
+                            <div class=" pt-2">
+                                <p class="list m-1">{{li}}</p>
+                            </div>
+                         </ng-template> 
+                    </div>
+                </div>
+            </div>
+         </div>
+
+         <div class="center">
+            <button mat-raised-button color="primary" class="mr-1" on-click="erase()">Erase</button>
+            <button mat-raised-button color="warn" on-click="onNoClick()">Close</button>
+         </div>
+    </div>
+</section>

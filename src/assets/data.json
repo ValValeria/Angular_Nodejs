@@ -1,0 +1,94 @@
+{"posts":[
+    {
+        "title":"Pipes in Angular",
+        "content":{
+          "p":"В Angular имеется ряд встроенных фильтров, наиболее часто используемые из которых:",
+          "ul":["date - преобразование даты"],
+          "code":["@Directive()"],
+          "img":"/assets/react_logo.png"
+        },
+        "img":"/assets/angular_code.png",
+        "categories":["angular"],
+        "id":1,
+        "excerpt":"Learn how to create pipes in angular"
+      },
+      {
+        "title":"Pipes in Angular",
+        "content":{
+          "p":"В Angular имеется ряд встроенных фильтров, наиболее часто используемые из которых:",
+          "ul":["date - преобразование даты"],
+          "code":["@Directive()"],
+          "img":"/assets/react_logo.png"
+        },
+        "img":"/assets/angular_code.png",
+        "categories":["angular"],
+        "id":1,
+        "excerpt":"Learn how to create pipes in angular"
+      },
+      {
+        "title":"Pipes in Angular",
+        "content":{
+          "p":"В Angular имеется ряд встроенных фильтров, наиболее часто используемые из которых:",
+          "ul":["date - преобразование даты"],
+          "code":["@Directive()"],
+          "img":"/assets/react_logo.png"
+        },
+        "img":"/assets/angular_code.png",
+        "categories":["angular"],
+        "id":1,
+        "excerpt":"Learn how to create pipes in angular"
+      },
+      {
+        "title":"Pipes in Angular",
+        "content":{
+          "p":"В Angular имеется ряд встроенных фильтров, наиболее часто используемые из которых:",
+          "ul":["date - преобразование даты"],
+          "code":["@Directive()"],
+          "img":"/assets/react_logo.png"
+        },
+        "img":"/assets/angular_code.png",
+        "categories":["angular"],
+        "id":1,
+        "excerpt":"Learn how to create pipes in angular"
+      },
+      {
+        "title":"Pipes in Angular",
+        "content":{
+          "p":"В Angular имеется ряд встроенных фильтров, наиболее часто используемые из которых:",
+          "ul":["date - преобразование даты"],
+          "code":["@Directive()"],
+          "img":"/assets/react_logo.png"
+        },
+        "img":"/assets/angular_code.png",
+        "categories":["angular"],
+        "id":1,
+        "excerpt":"Learn how to create pipes in angular"
+      },
+      {
+        "title":"7Pipes in Angular",
+        "content":{
+          "p":"В Angular имеется ряд встроенных фильтров, наиболее часто используемые из которых:",
+          "ul":["date - преобразование даты"],
+          "code":["@Directive()"],
+          "img":"/assets/react_logo.png"
+        },
+        "img":"/assets/angular_code.png",
+        "categories":["angular"],
+        "id":1,
+        "excerpt":"Learn how to create pipes in angular"
+      }
+],
+"latest_posts":[
+  {
+    "title":"React. Hooks",
+    "content":{
+      "p":"В Angular имеется ряд встроенных фильтров, наиболее часто используемые из которых:",
+      "ul":["date - преобразование даты"]
+    },
+    "img":"/assets/react_logo.png",
+    "categories":["react"],
+    "id":1,
+    "excerpt":"Learn how to create pipes in angular"
+  }
+]
+}

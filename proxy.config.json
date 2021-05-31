@@ -1,0 +1,32 @@
+{
+    "/api": {
+      "target":  {
+        "host": "localhost",
+        "protocol": "http:",
+        "port": 8000
+      },
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "info"
+    },
+  "/assets": {
+    "target":  {
+      "host": "localhost",
+      "protocol": "http:",
+      "port": 8000
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  },
+  "/public": {
+    "target":  {
+      "host": "localhost",
+      "protocol": "http:",
+      "port": 8000
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

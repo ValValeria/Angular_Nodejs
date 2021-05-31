@@ -1,0 +1,14 @@
+<div class="post__content-list w-100">
+  <div class="h5 text-left mb">The content of post</div>
+  <div class="post__content-items w-100">
+    <ol class="w-100">
+      <li
+          class="h6"
+          *ngFor="let item of content"
+          (click)="navigate(item.link)"
+      >
+        {{item.txt}}
+      </li>
+    </ol>
+  </div>
+</div>

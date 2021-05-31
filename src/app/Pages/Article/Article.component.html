@@ -1,0 +1,89 @@
+<div class="first-slide black w-100" *ngIf="auth.isAdmin">
+  <app-section-layout cssClass="back">
+    <div class="section__back wrap-md arrow-left center justify-content-between">
+      <div class="arrow-left">
+        <button mat-mini-fab color="accent" on-click="back()">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+        </button>
+        <span class="links-sm text-white">Back</span>
+      </div>
+      <div class="arrow-right">
+        <button mat-raised-button color="warn" (click)="deletePost()">
+          Delete the post
+        </button>
+      </div>
+    </div>
+  </app-section-layout>
+</div>
+
+<div class="w-100 {{!auth.isAdmin && 'first-slide'}}">
+  <app-section-layout [hasTitle]="false" [noSection]="true">
+    <div class="w-100 center justify-content-start">
+      <app-breadcrumbs [urls]="urls"></app-breadcrumbs>
+    </div>
+  </app-section-layout>
+</div>
+
+<div class="w-100" [hidden]="!post?.title?.length">
+  <app-section-layout title="{{post?.title}}" [noSection]="true">
+    <div class="article">
+      <div class="article__category mb-half h6">
+        Category: <button mat-button color="accent"><span class="h6">{{post?.categories}}</span></button>
+      </div>
+      <div class="article__main-img mb">
+        <img src="{{post?.img}}" alt="" srcset="" matCardImage>
+      </div>
+
+      <div class="article__content w-100 center flex-column align-items-start mb">
+        <app-post-content-list [content]="content" class="w-100"></app-post-content-list>
+      </div>
+
+      <div class="article__item mb mt">
+        <div class="w-100 ">
+          <ng-container #container></ng-container>
+        </div>
+
+        <ng-template  #p let-lineP="p">
+          <p class="h6 mb-half">{{lineP}}</p>
+        </ng-template>
+        <ng-template  #code let-items="code">
+          <ul class="code  mb-half">
+            <p class="h6" *ngFor="let line of items" [innerHTML]="line"></p>
+          </ul>
+        </ng-template>
+        <ng-template  #title let-h1="h1">
+          <div class="mt mb-half text-left">
+            <h4 class="mt">{{h1}}</h4>
+          </div>
+        </ng-template>
+        <ng-template #img let-lineImg="img">
+          <div class="mb-half">
+            <img src="{{lineImg}}" alt="" srcset="">
+          </div>
+        </ng-template>
+        <ng-template #list let-li="li">
+          <div class="pt-2 action__list-item pb-2">
+            <span class="h6">{{li}}</span>
+          </div>
+        </ng-template>
+      </div>
+
+      <div class="article__author mb">
+        <app-blog-author class="w-100"></app-blog-author>
+      </div>
+    </div>
+  </app-section-layout>
+</div>
+
+<app-section-layout *ngIf="!post?.title">
+  <div class="w-100 center">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+</app-section-layout>
+
+<app-section-layout class="comments" title="Comments">
+  <comments [postId]="postId" class="w-100"></comments>
+</app-section-layout>
+

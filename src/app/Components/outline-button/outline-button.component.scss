@@ -1,0 +1,25 @@
+@import "src/variables";
+
+.btn{
+  z-index:1;
+
+  .btn-orange{
+    box-shadow: 4px 4px 20px rgba(169, 132, 2, 0.25);
+    background-color: transparent;
+    border-radius: 40px;
+    border: 3px solid $orange-color;
+    padding: $margin/2 $margin;
+    color: $light-color;
+    outline:none;
+    text-align: center;
+    line-height: 1;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    min-width: 130px;
+  }
+
+  .btn-orange:hover{
+    color: $orange-color;
+  }
+}

@@ -1,0 +1,14 @@
+@import "src/variables";
+
+.grid-layout__items{
+  display:grid;
+  grid-auto-rows: auto;
+  grid-gap: $margin;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+:host{
+  width:100% !important;
+}

@@ -1,0 +1,31 @@
+@import "src/variables";
+
+.post__content-list{
+  border: 1px solid $dark-color;
+  border-left: none;
+  border-right: none;
+  padding: $margin;
+  margin-top: $margin;
+  margin-bottom: $margin;
+
+  ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    margin-bottom: 0;
+  }
+
+  ol li {
+    counter-increment: my-awesome-counter;
+    padding: $margin/2;
+    padding-left: 0;
+    cursor: pointer;
+  }
+
+  ol li::before {
+    content: counter(my-awesome-counter) ". ";
+    padding-right: 16px;
+    color: $dark-color;
+    display:inline-block;
+    font-weight: 500 !important;
+  }
+}

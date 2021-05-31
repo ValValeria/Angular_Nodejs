@@ -1,0 +1,42 @@
+@import "src/variables";
+
+.comments__headline{
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+}
+
+.comments__fields{
+  margin-top:3rem;
+}
+
+.comments__form{
+  padding: $margin !important;
+  width: 100%;
+}
+
+.comments__img button{
+  box-shadow: none;
+  color: white;
+  background-color: $dark-color;
+}
+
+.comments__card{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.comments__img{
+  grid-column: 1/span 2;
+  grid-row: 1/-1;
+}
+
+h6, h5{
+  justify-self: start;
+}
+
+h6{
+  grid-row: 2/3;
+}

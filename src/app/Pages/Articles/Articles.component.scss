@@ -1,0 +1,38 @@
+a:hover,a{
+    text-decoration: none;
+}
+
+.posts__category ::ng-deep .flex-layout__items{
+  justify-content: space-between !important;
+}
+
+.light-gr{
+    background-color: #FAFBFE !important;
+}
+
+.section__error-black{
+    font-weight: 300;
+    font-size: 23px;
+    margin-bottom: 2rem;
+}
+
+img{
+  max-height: 250px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.scale-1{
+    transform: scale(1.5);
+    border-radius: 16px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.section__banner-sm{
+    min-height: 90vh;
+}
+
+.posts__category{
+  width: 100% !important;
+}

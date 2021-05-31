@@ -1,0 +1,35 @@
+@import "src/variables";
+
+.blog-author{
+  border: 1px solid $dark-color;
+  border-left: none;
+  border-right: none;
+  padding: $margin/2 $margin;
+  margin-top: $margin*3;
+
+  .blog-author__content{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    grid-column-gap: $margin;
+  }
+
+  .blog-author__img{
+    grid-row: 1/-1;
+    grid-column: 1 / span 2;
+  }
+
+  .blog-author__info-job{
+    grid-row: 2/3;
+  }
+
+  .blog-author__username, .blog-author__info-job{
+    justify-self: start;
+  }
+
+  .blog-author__username{
+    font-weight: 400 !important;
+  }
+}

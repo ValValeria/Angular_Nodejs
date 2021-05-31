@@ -1,0 +1,50 @@
+<header class="header black">
+    <div class="header__container container" >
+        <div class="header__content wrap-md">
+            <div class="header__brand-name ">
+               <a routerLink="/">
+                   <img src="/assets/brand.svg" alt="brand-name" style="height:30px;width:auto"/>
+               </a>
+            </div>
+            <div class="menu-icon" on-click="menuIcon()">
+                    <div class="menu-icon__container">
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrows-fullscreen" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+                        </svg>
+                    </div>
+            </div>
+            <ul class="header__nav" #nav>
+                <li class="header__link text-white" ><a  [routerLinkActiveOptions]="{exact:true}" routerLink="/"  routerLinkActive="header__link-active">Home</a></li>
+                <li class="header__link text-white" ><a routerLink="/topics"  routerLinkActive="header__link-active">Topics</a></li>
+                <li class="header__link text-white"><a routerLink="/posts"  routerLinkActive="header__link-active">Posts</a></li>
+                <li class="header__link text-white"  *ngIf="auth.isAdmin"><a  routerLink="/createpost"  routerLinkActive="header__link-active">Create a post</a></li>
+                <li class="header__link text-white" *ngIf="!auth.isAdmin"><a routerLink="/loginadmin"  routerLinkActive="header__link-active">Log in</a></li>
+                <li class="header__link center" >
+                      <div class="header__search-form position-relative"on-mouseleave="isTouched=false">
+                           <input type="text" class="form-control shadow" #val  />
+                           <div class="position-absolute header__search-results" *ngIf="isTouched" >
+                               <mat-list>
+                                   <mat-list-item *ngFor="let post of posts">
+                                        <div>
+                                            <a routerLink="/post/{{post.id}}"style="color: #151f20!important ">{{post.title}}</a>
+                                        </div>
+                                        <mat-divider></mat-divider>
+                                   </mat-list-item>
+                                   <mat-list-item *ngIf="!posts.length">
+                                         <div>
+                                             No results
+                                         </div>
+                                         <mat-divider></mat-divider>
+                                   </mat-list-item>
+                               </mat-list>
+                           </div>
+                      </div>
+                      <div class="ml-half" on-click="search(val.value)">
+                        <app-outline-button cssClass="h6" txt="Search"></app-outline-button>
+                      </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+</header>

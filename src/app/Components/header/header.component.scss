@@ -1,0 +1,126 @@
+@import "src/variables";
+
+$color:white;
+
+.header__content{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header{
+    position:fixed;
+    width:100%;
+    z-index:50;
+}
+
+.header__link app-outline-button ::ng-deep .btn-orange{
+  padding: $margin/4 $margin/2.5;
+  max-width: 120px;
+}
+
+.header__container{
+    padding:20px;
+}
+
+.header__nav{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom:0px !important;
+
+    li{
+        list-style: none;
+        margin-left:16px;
+    }
+
+    li a , li a :hover{
+        color:$color;
+        text-decoration: none !important;
+        padding:5px 20px;
+        font-weight: 300 !important;
+    }
+
+    li a :hover, li a :visited {
+        color:#3498db;
+    }
+}
+
+.header__brand-name a,.header__brand-name a:hover{
+    text-transform: uppercase;
+    font-weight:300;
+    font-size:20px;
+    color:$color;
+}
+
+.header__link-active{
+   color: rgba(255,255,255,.7)!important;
+}
+
+.header__search-results{
+    top:38px;
+    left:0;
+    width:100%;
+    z-index:77777777777777;
+    color: #151f20!important;
+    background-color: white;
+}
+
+.menu-icon{
+  display: none;
+}
+
+@media(max-width: $media-header){
+    .menu-icon{
+      display: block;
+    }
+
+    .header__content,.header__nav{
+        flex-direction: column;
+    }
+    .header__brand-name{
+        width:100%;
+    }
+    .none{
+        display:none;
+    }
+    .header__nav{
+        padding-top:2rem;
+        width:100%;
+        min-height: 90vh;
+        justify-content: flex-start;
+
+        li{
+            padding:1.8rem;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            width: 90%;
+            text-align: center;
+        }
+
+        li a {
+            display:block;
+            border:1px solid transparent;
+        }
+
+        li a:hover{
+            border:1px solid white;
+        }
+    }
+
+    .header__search-form{
+        width:90%;
+
+        button{
+            min-width: 120px;
+            margin-left: 10px !important;
+        }
+    }
+
+    .menu-icon{
+        position: absolute;
+        right: 2.7rem;
+        top: 1rem;
+        cursor: pointer;
+    }
+}
