@@ -1,8 +1,8 @@
 # JavaScript blog
 I have decided to develop the app where I have an opportunity to publish my posts related to js development. Techonologies, which I am using, is `Angular, TS, Webpack, NodeJS`
 
-> [!home](./screenshots/screen1.png)
-> [!posts](./screenshots/screen3.png)
+> ![home](./screenshots/screen1.png)
+> ![posts](./screenshots/screen3.png)
 
 ## How to run the app
 * `npm install`
