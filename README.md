@@ -19,4 +19,4 @@ I have decided to develop the app where I have an opportunity to publish my post
 * GET /login - the page, where admin can log in
 * GET /topics - the page, where user can see posts related to react and angular
 
-`!Warning. The app is under development`
+## Warning. The app is under development
